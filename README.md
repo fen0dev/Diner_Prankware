@@ -22,6 +22,7 @@ P.S.: Once the script has generated fake credentials, it will put them in a .txt
 # Scrapeproxies.py
 
 That's pretty mmuch self-explanatory. You will be scraping proxies andd try to be less visible :)
+I had my proxies set to 127.0.0.1:9050 and it worked, it might as well not work with you, idk! If it doesn't try to set the proxies to default.
 
 
 
