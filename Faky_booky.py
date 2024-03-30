@@ -19,7 +19,7 @@ class PhoneNumberGenerator():
         phone_number = prefix + ''.join(random.choices(string.digits, k=remaining_digits))
         return phone_number
 
-def generate_random_name(existing_names):
+def generate_random_name(existing_names):   # Chnage names below to whatever you want, these are just examples
     first_names = ['John', 'Alice', 'Michael', 'Emily', 'David', 'Sarah', "Jonas", "Luka", "Kamila", "Camilla", "Johan", "Frederik", "Frederikke", "Josef"]
     last_names = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Lund', "Kjaer Jensen", "Modric", "Dirk", "Genzano", "Jensen"]
     true = True
@@ -50,8 +50,7 @@ def write_contacts_2_file(contacts):
     with open('contacts.txt', 'a') as file:
         for contact in contacts:
             file.write(f"Name: {contact['name']}, Email: {contact['email']}, Phone Number: {contact['phone_number']}\n")
-# End background algorithm
-
+            
 # <-------------------------------------------- Start booking process on Website ---------------------------------------------> #
 def booking (url, contact):
     by_css = By.CSS_SELECTOR
@@ -198,13 +197,13 @@ def booking (url, contact):
     time.sleep(8)
     browser.delete_all_cookies()
     browser.quit()
-# <--------------------------------------------------- End prankware -------------------------------------------------> #
+# <------------------------------------------------ End booking process on Website -------------------------------------------------> #
 
 # Main function that runs the whole script
 def main():
-    num_contacts = 5
-    country_codes = ['US', 'UK', 'FR', 'IT', 'DK']  # Example country codes
-    phone_number_generator = PhoneNumberGenerator()  # Instantiate the generator
+    num_contacts = 5  # You can change to whatever you want to
+    country_codes = ['US', 'UK', 'FR', 'IT', 'DK']   # Example country codes
+    phone_number_generator = PhoneNumberGenerator()   # Instantiate the generator
     existing_names =  set()
     existing_emails = set() 
     
@@ -216,7 +215,7 @@ def main():
         contacts.append(contact)
     
     write_contacts_2_file(contacts)
-    url = "https://www.sevenrooms.com/reservations/cafevictor"   # Your actual Booking website url
+    url = "https://www.example.com/reservations/restaurant"   # Your actual Booking website url
 
     #Perfom booking for each contact
     for contact in contacts:
